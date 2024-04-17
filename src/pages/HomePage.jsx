@@ -1,14 +1,19 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, useNavigate } from "react-router-dom";
 
 function HomePage() {
-    return (
-        <>
-            <Link to='/page1'>Link</Link>
-            <br/>
-            <NavLink to='/page1'>NavLink</NavLink>
-        </>
+  const navigate = useNavigate();
 
-    )
+  function navigateHandler() {
+    navigate('page1')
+  }
 
+  return (
+    <>
+      <button onClick={navigateHandler}>navigate</button>
+      <Link to="page1">Link</Link>
+      <br />
+      
+    </>
+  );
 }
 export default HomePage;

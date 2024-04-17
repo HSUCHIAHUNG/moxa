@@ -1,10 +1,17 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
-export default function Root () {
-    return (
-        <>
-            < Outlet/>
-            <p>RootLayout</p>
-        </>
-    )
+export default function Root() {
+  return (
+    <>
+      <Outlet />
+      <NavLink
+        to="/"
+        className={({ isActive }) => (isActive ? "text-red-500" : undefined)}
+        end
+      >
+        homePage
+      </NavLink>
+      <p>RootLayout</p>
+    </>
+  );
 }
